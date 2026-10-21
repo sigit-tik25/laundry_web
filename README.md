@@ -31,7 +31,7 @@ clean-fresh-laundry/
 ├── pesanan.html          # Halaman pemesanan via WhatsApp
 ├── base.css              # Variabel, tipografi, dan pengaturan dasar
 ├── components.css        # Komponen dan layout
-├── Assests/
+├── Assets/
 │   ├── laundry-machine.png
 │   ├── Fsan.jpg
 │   ├── foto_suasana_laundry.png
