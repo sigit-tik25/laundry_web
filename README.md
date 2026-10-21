@@ -43,8 +43,7 @@ clean-fresh-laundry/
 │   ├── requirements.md   # Dokumen kebutuhan
 │   ├── wireframe.pdf     # Rancangan layout
 │   └── audit.pdf         # Laporan pengujian
-├── README.md
-└── CHANGELOG.md
+└── README.md
 ```
 
 ---
