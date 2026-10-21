@@ -1,8 +1,6 @@
-# Clean & Fresh Laundry — Website Profil UMKM
+# Clean & Fresh Laundry
 
 Website landing page profil UMKM **Clean & Fresh Laundry** yang menampilkan informasi layanan, cara pemesanan, testimoni, dan kontak. Dibangun menggunakan HTML5 dan CSS3 tanpa framework.
-
-> **Catatan:** Nama usaha, alamat, dan informasi kontak merupakan data simulasi untuk keperluan pembelajaran.
 
 ---
 
