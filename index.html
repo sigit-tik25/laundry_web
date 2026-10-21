@@ -3,84 +3,107 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Clean &amp; Fresh Laundry | Layanan dan Kontak</title>
-  <meta name="description" content="Layanan cuci kiloan, setrika, dan express
-    dari Clean &amp; Fresh Laundry. Buka 08.00-20.00 WIB.">
+  <title>Clean &amp; Fresh Laundry | Beranda, Layanan, dan Pesanan</title>
+  <meta name="description" content="Informasi layanan laundry, cara pemesanan,
+    dan kontak Clean &amp; Fresh Laundry.">
+  <link rel="icon" href="Assests/laundry-machine.png" type="image/png">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="components.css">
 </head>
 <body>
   <a class="skip-link" href="#konten">Lewati navigasi ke konten utama</a>
- 
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a class="brand" href="#beranda">Clean &amp; Fresh Laundry</a>
-      <nav aria-label="Navigasi utama">
-        <ul class="nav-list">
-          <li><a href="#beranda">Beranda</a></li>
-          <li><a href="#katalog">Layanan</a></li>
-          <li><a href="#kontak">Kontak</a></li>
-        </ul>
-      </nav>
-    </div>
+
+  <header>
+    <a href="#beranda">Clean &amp; Fresh Laundry</a>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="opsi.html">Layanan</a></li>
+        <li><a href="#cara-pesan">Cara pesan</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li><a href="pesanan.html">Pesanan</a></li>
+      </ul>
+    </nav>
   </header>
- 
+
   <main id="konten" tabindex="-1">
-    <section id="beranda" class="section hero" aria-labelledby="judul-hero">
-      <div class="container hero__grid">
-        <div>
-          <p class="eyebrow">Laundry kiloan, bersih dan wangi</p>
-          <h1 id="judul-hero">Cucian beres, waktu Anda lebih lega.</h1>
-          <p>Serahkan cucian harian Anda kepada kami. Pilih layanan sesuai
-            kebutuhan dan lihat informasi kunjungan dengan mudah.</p>
-          <a class="button" href="#katalog">Lihat layanan dan harga</a>
-        </div>
-        <img class="hero__image" src="assets/images/laundry.jpg"
-          alt="Area mesin cuci dan meja lipat di Clean &amp; Fresh Laundry"
-          width="1200" height="800">
-      </div>
+    <section id="beranda" aria-labelledby="judul-beranda">
+      <p>Laundry kiloan, bersih dan wangi</p>
+      <h1 id="judul-beranda">Cucian Bersih dan Wangi, Selesai Tepat Waktu</h1>
+      <p>Laundry kiloan, express, dan satuan untuk kebutuhan harian Anda.
+        Pesan cukup lewat WhatsApp. (Data simulasi)</p>
+      <p>
+        <a href="pesanan.html">Pesan via WhatsApp</a>
+        <a href="opsi.html">Lihat layanan</a>
+      </p>
+      <figure>
+        <img src="Assests/Fsan.jpg"
+          alt="Ilustrasi mesin cuci, pakaian bersih, dan perlengkapan laundry"
+          width="300" height="300">
+        <figcaption>Ilustrasi layanan Clean &amp; Fresh Laundry.</figcaption>
+      </figure>
     </section>
- 
-    <section id="katalog" class="section" aria-labelledby="judul-katalog">
-      <div class="container">
-        <h2 id="judul-katalog">Pilihan layanan</h2>
-        <p>Harga berikut merupakan contoh untuk latihan.</p>
-        <div class="product-grid">
-          <article class="product-card">
-            <h3>Cuci Kiloan Reguler</h3>
-            <p>Cuci dan lipat, selesai dalam 2 hari.</p>
-            <p class="product-card__price">Rp7.000/kg</p>
-          </article>
-          <article class="product-card">
-            <h3>Cuci Setrika</h3>
-            <p>Cuci, setrika, dan lipat rapi, selesai dalam 2 hari.</p>
-            <p class="product-card__price">Rp9.000/kg</p>
-          </article>
-          <article class="product-card">
-            <h3>Cuci Express</h3>
-            <p>Cuci dan lipat dengan layanan selesai dalam 24 jam.</p>
-            <p class="product-card__price">Rp12.000/kg</p>
-          </article>
-        </div>
-      </div>
+
+    <section id="cara-pesan" aria-labelledby="judul-cara-pesan">
+      <h2 id="judul-cara-pesan">Cara Pesan</h2>
+      <ol>
+        <li>
+          <h3>Kirim cucian</h3>
+          <p>Pesan lewat WhatsApp atau antar langsung ke toko.</p>
+        </li>
+        <li>
+          <h3>Timbang dan konfirmasi</h3>
+          <p>Cucian ditimbang dan harga dikonfirmasi.</p>
+        </li>
+        <li>
+          <h3>Antar atau ambil</h3>
+          <p>Cucian diantar atau diambil kembali sesuai jadwal.</p>
+        </li>
+      </ol>
     </section>
- 
-    <section id="kontak" class="section contact" aria-labelledby="judul-kontak">
-      <div class="container">
-        <h2 id="judul-kontak">Antar cucian Anda</h2>
-        <p><strong>Alamat:</strong> Jalan Contoh No. 10, Depok.</p>
-        <p><strong>Jam buka:</strong> Setiap hari, 08.00-20.00 WIB.</p>
-        <address>Email: <a href="mailto:halo@example.com">halo@example.com</a></address>
-        <p class="notice">Website demonstrasi perkuliahan. Nama usaha dan informasi
-          kontak merupakan data simulasi.</p>
-      </div>
+
+    <section id="testimoni" aria-labelledby="judul-testimoni">
+      <h2 id="judul-testimoni">Kata Pelanggan</h2>
+      <figure>
+        <blockquote>
+          <p>“Cepat dan wangi, cucian kuliah jadi tidak pernah telat.”</p>
+        </blockquote>
+        <figcaption>Pelanggan A (testimoni simulasi)</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>“Harga jelas dan sepatu saya kembali seperti baru.”</p>
+        </blockquote>
+        <figcaption>Pelanggan B (testimoni simulasi)</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>“Tinggal chat WhatsApp, cucian diantar sore harinya.”</p>
+        </blockquote>
+        <figcaption>Pelanggan C (testimoni simulasi)</figcaption>
+      </figure>
     </section>
+
+    <section id="kontak" aria-labelledby="judul-kontak">
+      <h2 id="judul-kontak">Informasi dan Kontak</h2>
+      <address>
+        <p>Jam buka: Senin-Sabtu, 08.00-20.00 (simulasi)</p>
+        <p>Alamat: Jl. Margonda No. 99, Depok (alamat simulasi)</p>
+        <p>WhatsApp: <a href="https://wa.me/628987651874">0898-7651-874 (contoh)</a></p>
+      </address>
+      <figure>
+        <img src="Assests/map.png" alt="Peta lokasi laundry di sekitar kawasan Tebet" width="1444" height="804">
+        <figcaption>Tempat peta lokasi laundry.</figcaption>
+      </figure>
+    </section>
+
   </main>
- 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Clean &amp; Fresh Laundry - Proyek pembelajaran.</p>
-    </div>
+
+  <footer>
+    <p>&copy; 2026 Clean &amp; Fresh Laundry.</p>
+    <p>Website untuk tugas praktik; data dan testimoni bersifat simulasi.</p>
+    <p>Atribusi gambar: isi sesuai sumber gambar yang digunakan.</p>
   </footer>
 </body>
 </html>

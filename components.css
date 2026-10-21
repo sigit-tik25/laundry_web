@@ -1,26 +1,658 @@
-.site-header { border-bottom: 1px solid var(--color-border); }
-.site-header__inner { display: flex; flex-wrap: wrap; align-items: center;
-  justify-content: space-between; gap: 1rem; padding-block: 1rem; }
-.brand { font-size: 1.15rem; font-weight: 700; }
-.nav-list { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; padding: 0; margin: 0; list-style: none; }
-.nav-list a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 0.25rem; }
-.hero { background: var(--color-soft); }
-.hero__grid { display: grid; gap: 2rem; align-items: center; }
-.hero__grid > * { min-width: 0; }
-.eyebrow { color: var(--color-brand); font-weight: 700; }
-.hero__image { width: 100%; border-radius: var(--radius); }
-.button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
-  padding: 0.75rem 1rem; border-radius: 0.5rem; color: #ffffff; background: var(--color-brand);
-  font-weight: 700; text-decoration: none; }
-.button:hover { background: #084f5c; }
-.product-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
-.product-card { padding: 1.5rem; border: 1px solid var(--color-border); border-radius: var(--radius); }
-.product-card h3 { margin-top: 0; }
-.product-card__price { color: var(--color-brand); font-weight: 700; }
-.contact { background: var(--color-soft); }
-.notice { max-width: 65ch; font-size: 0.95rem; }
-.site-footer { padding-block: 1rem; border-top: 1px solid var(--color-border); }
+header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  min-height: 4.5rem;
+  padding: 0.75rem max(1.25rem, calc((100% - var(--content-width)) / 2));
+  background: var(--color-background);
+  border-bottom: 1px solid #edf1f4;
+}
+
+header > a {
+  color: var(--color-brand-dark);
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1.25rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-muted);
+  font-size: 0.925rem;
+  text-decoration: none;
+}
+
+header nav a:hover,
+header nav a[aria-current="page"] {
+  color: var(--color-brand-dark);
+}
+
+main:has(> #beranda) {
+  width: 100%;
+}
+
+#beranda {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(16rem, 0.95fr);
+  align-items: center;
+  gap: 0.15rem 3.5rem;
+  padding: clamp(3rem, 7vw, 5.75rem) max(1.25rem, calc((100% - var(--content-width)) / 2));
+  background: var(--color-soft);
+}
+
+#beranda > p:first-child {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0.5rem;
+  color: var(--color-brand-dark);
+  font-weight: 700;
+}
+
+#beranda h1 {
+  grid-column: 1;
+  grid-row: 2;
+  max-width: 15ch;
+}
+
+#beranda > p:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 3;
+  max-width: 52ch;
+  margin-bottom: 1.25rem;
+  color: var(--color-muted);
+}
+
+#beranda > p:nth-of-type(3) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  grid-column: 1;
+  grid-row: 4;
+  margin-bottom: 0;
+}
+
+#beranda > p:nth-of-type(3) a,
+main > p > a[href^="https://wa.me"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.7rem 1.25rem;
+  color: #ffffff;
+  background: var(--color-brand);
+  border: 1px solid var(--color-brand);
+  border-radius: 999px;
+  font-size: 0.925rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+#beranda > p:nth-of-type(3) a:hover,
+main > p > a[href^="https://wa.me"]:hover {
+  background: var(--color-brand-dark);
+  border-color: var(--color-brand-dark);
+  transform: translateY(-1px);
+}
+
+#beranda > p:nth-of-type(3) a + a {
+  color: var(--color-brand-dark);
+  background: #ffffff;
+}
+
+#beranda > p:nth-of-type(3) a + a:hover {
+  color: #ffffff;
+  background: var(--color-brand-dark);
+}
+
+#beranda figure {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  justify-self: end;
+  width: min(100%, 25rem);
+  padding: 0.75rem;
+  margin: 0;
+  background: #c3e6f1;
+  border-radius: var(--radius);
+}
+
+#beranda figure img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 0.3rem);
+}
+
+#beranda figcaption {
+  padding-inline: 0.25rem;
+}
+
+#cara-pesan,
+#testimoni,
+#kontak {
+  padding: clamp(2.75rem, 5vw, 4rem) max(1.25rem, calc((100% - var(--content-width)) / 2));
+}
+
+#cara-pesan h2,
+#testimoni h2,
+#kontak h2 {
+  grid-column: 1 / -1;
+}
+
+#cara-pesan ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: order-step;
+}
+
+#cara-pesan li {
+  min-width: 0;
+  padding: 1.25rem;
+  background: var(--color-soft);
+  border-radius: var(--radius);
+  counter-increment: order-step;
+}
+
+#cara-pesan li h3::before {
+  content: counter(order-step) ". ";
+}
+
+#cara-pesan li p {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+#testimoni {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+#testimoni h2 {
+  margin-bottom: 0.25rem;
+}
+
+#testimoni figure {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 9rem;
+  padding: 1.25rem;
+  margin: 0;
+  background: var(--color-card);
+  border-radius: var(--radius);
+}
+
+#testimoni blockquote {
+  margin-bottom: 1rem;
+}
+
+#testimoni blockquote p {
+  margin-bottom: 0;
+}
+
+#testimoni figcaption {
+  margin-top: auto;
+  color: var(--color-brand-dark);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+#kontak {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 0.5rem 3rem;
+  background: #ffffff;
+}
+
+#kontak address {
+  grid-column: 1;
+}
+
+#kontak address p {
+  margin-bottom: 0.6rem;
+  color: var(--color-muted);
+}
+
+#kontak figure {
+  display: grid;
+  grid-column: 2;
+  grid-row: 2;
+  place-items: center;
+  min-height: 12rem;
+  padding: 1rem;
+  margin: 0;
+  background: #c3e6f1;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+#kontak figcaption {
+  margin: 0;
+  color: var(--color-text);
+}
+
+main:not(:has(> #beranda)) {
+  width: min(100% - 2rem, var(--content-width));
+  margin-inline: auto;
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+}
+
+main:has(> ul) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.9fr);
+  align-items: start;
+  gap: 1rem 2.5rem;
+}
+
+main:has(> ul) > h1,
+main:has(> ul) > h1 + p,
+main:has(> ul) > p:has(a),
+main:has(> ul) > p:last-child {
+  grid-column: 1 / -1;
+}
+
+main:has(> ul) > h1 {
+  margin-bottom: 0;
+}
+
+main:has(> ul) > h1 + p {
+  margin-bottom: 0.5rem;
+  color: var(--color-muted);
+}
+
+main:has(> ul) > figure {
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0;
+}
+
+main:has(> ul) > figure img,
+main:has(> figure img) > figure img {
+  width: 100%;
+  max-height: 24rem;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+main > ul {
+  display: grid;
+  gap: 0.85rem;
+  grid-column: 1;
+  grid-row: 3;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+main > ul li {
+  min-width: 0;
+}
+
+main > ul article {
+  height: 100%;
+  padding: 1.25rem;
+  background: var(--color-card);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+}
+
+main > ul article h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+main > ul article p {
+  margin-bottom: 0.45rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+main > ul article p:last-child {
+  margin-bottom: 0;
+}
+
+main > ul article p:nth-of-type(1) {
+  color: var(--color-brand-dark);
+  font-weight: 700;
+}
+
+main:has(> p > a[href^="https://wa.me"]) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.9fr);
+  align-items: center;
+  gap: 0.5rem 3rem;
+}
+
+main:has(> p > a[href^="https://wa.me"]) > h1,
+main:has(> p > a[href^="https://wa.me"]) > p:nth-of-type(1),
+main:has(> p > a[href^="https://wa.me"]) > section,
+main:has(> p > a[href^="https://wa.me"]) > p:last-child {
+  grid-column: 1 / -1;
+}
+
+main:has(> p > a[href^="https://wa.me"]) > h1 {
+  margin-bottom: 0;
+}
+
+main:has(> p > a[href^="https://wa.me"]) > p:nth-of-type(1) {
+  margin-bottom: 0.5rem;
+  color: var(--color-muted);
+}
+
+main:has(> p > a[href^="https://wa.me"]) > p:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+main:has(> p > a[href^="https://wa.me"]) > figure {
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0;
+}
+
+main:has(> p > a[href^="https://wa.me"]) > section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 1rem 2rem;
+  padding: 2.5rem 0 0;
+}
+
+main:has(> p > a[href^="https://wa.me"]) > section h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+main:has(> p > a[href^="https://wa.me"]) > section address {
+  grid-column: 1;
+}
+
+main:has(> p > a[href^="https://wa.me"]) > section figure {
+  display: grid;
+  grid-column: 2;
+  grid-row: 2;
+  place-items: center;
+  min-height: 12rem;
+  padding: 1rem;
+  margin: 0;
+  background: #c3e6f1;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+main:has(> p > a[href^="https://wa.me"]) > section figure figcaption {
+  margin: 0;
+  color: var(--color-text);
+}
+
+footer {
+  padding: 1.25rem max(1.25rem, calc((100% - var(--content-width)) / 2));
+  color: #e9f1f5;
+  background: #223344;
+  font-size: 0.875rem;
+}
+
+footer p {
+  margin-bottom: 0.4rem;
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.brand {
+  color: var(--color-brand-dark);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 0.25rem;
+}
+
+.hero {
+  background: var(--color-soft);
+}
+
+.hero__grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero__grid > * {
+  min-width: 0;
+}
+
+.eyebrow {
+  color: var(--color-brand-dark);
+  font-weight: 700;
+}
+
+.hero__image {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  background: var(--color-brand);
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--color-brand-dark);
+}
+
+.product-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.product-card {
+  padding: 1.5rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.product-card h3 {
+  margin-top: 0;
+}
+
+.product-card__price {
+  color: var(--color-brand-dark);
+  font-weight: 700;
+}
+
+.contact {
+  background: var(--color-soft);
+}
+
+.notice {
+  max-width: 65ch;
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  padding-block: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
 @media (min-width: 48rem) {
-  .hero__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 47.99rem) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-inline: 1.25rem;
+  }
+
+  header nav,
+  header nav ul {
+    width: 100%;
+  }
+
+  header nav ul {
+    column-gap: 0.75rem;
+  }
+
+  header nav a {
+    font-size: 0.875rem;
+  }
+
+  #beranda {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding-inline: 1.25rem;
+  }
+
+  #beranda > p:first-child,
+  #beranda h1,
+  #beranda > p:nth-of-type(2),
+  #beranda > p:nth-of-type(3),
+  #beranda figure {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  #beranda h1 {
+    max-width: 16ch;
+  }
+
+  #beranda figure {
+    justify-self: stretch;
+    width: 100%;
+    margin-top: 1.25rem;
+  }
+
+  #cara-pesan,
+  #testimoni,
+  #kontak {
+    padding-inline: 1.25rem;
+  }
+
+  #cara-pesan ol,
+  #testimoni {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #kontak {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #kontak h2,
+  #kontak address,
+  #kontak figure {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  main:has(> ul),
+  main:has(> p > a[href^="https://wa.me"]) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  main:has(> ul) > h1,
+  main:has(> ul) > h1 + p,
+  main:has(> ul) > p:has(a),
+  main:has(> ul) > p:last-child,
+  main:has(> ul) > figure,
+  main > ul,
+  main:has(> p > a[href^="https://wa.me"]) > h1,
+  main:has(> p > a[href^="https://wa.me"]) > p,
+  main:has(> p > a[href^="https://wa.me"]) > figure,
+  main:has(> p > a[href^="https://wa.me"]) > section,
+  main:has(> p > a[href^="https://wa.me"]) > section h2,
+  main:has(> p > a[href^="https://wa.me"]) > section address,
+  main:has(> p > a[href^="https://wa.me"]) > section figure {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  main:has(> ul) > figure {
+    margin-block: 0.5rem;
+  }
+
+  main:has(> p > a[href^="https://wa.me"]) > section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-top: 1.5rem;
+  }
+
+  main:has(> p > a[href^="https://wa.me"]) > section figure {
+    grid-row: auto;
+  }
+
+  footer {
+    padding-inline: 1.25rem;
+  }
 }
