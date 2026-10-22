@@ -52,7 +52,7 @@ Tidak diperlukan instalasi atau server khusus.
 
 1. Unduh atau clone repositori ini.
 2. Buka folder proyek.
-3. Klik dua kali `index.html`, atau buka lewat **File → Open File** di Chrome/Firefox.
+3. Klik dua kali `index.html`, atau buka lewat **File → Open File** di Chrome/firefox.
 
 ---
 
